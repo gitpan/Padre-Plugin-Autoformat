@@ -14,7 +14,7 @@ use warnings;
 
 use base qw{ Padre::Plugin };
 
-our $VERSION = '0.2.0';
+our $VERSION = '0.2.1';
 
 
 # -- padre plugin api, refer to Padre::Plugin
@@ -50,7 +50,7 @@ sub autoformat {
 
     # no selection means autoformat current paragraph
     if ( not $editor->GetSelectedText ) {
-        my ($b, $e) = $self->_find_current_paragraph;
+        my ($b, $e) = $self->_current_paragraph;
         return if $b == $e; # in between paragraphs
         $editor->SetSelection($b, $e);
     }
