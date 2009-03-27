@@ -5,7 +5,7 @@ WriteMakefile
           'NAME' => 'Padre::Plugin::Autoformat',
           'VERSION_FROM' => 'lib/Padre/Plugin/Autoformat.pm',
           'PREREQ_PM' => {
-                           'Padre' => '0.28',
+                           'Padre' => '0.30',
                            'Test::More' => 0,
                            'Text::Autoformat' => 0
                          },
