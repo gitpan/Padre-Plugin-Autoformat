@@ -18,7 +18,7 @@ use Module::Util          qw{ find_installed };
 
 use base qw{ Padre::Plugin };
 
-our $VERSION = '1.1.0';
+our $VERSION = '1.1.1';
 
 
 # -- padre plugin api, refer to Padre::Plugin
@@ -38,8 +38,8 @@ sub plugin_icon {
     return Wx::Bitmap->new( $iconpath, Wx::wxBITMAP_TYPE_PNG );
 }
 
-# padre interface
-sub padre_interface {
+# padre interfaces
+sub padre_interfaces {
     'Padre::Plugin'     => 0.28,
     'Padre::Wx::Editor' => 0.30,
 }
@@ -117,7 +117,7 @@ The following methods are implemented:
 
 =item menu_plugins_simple()
 
-=item padre_interface()
+=item padre_interfaces()
 
 =item plugin_icon()
 
