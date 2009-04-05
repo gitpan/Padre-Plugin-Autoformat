@@ -18,13 +18,13 @@ use Module::Util          qw{ find_installed };
 
 use base qw{ Padre::Plugin };
 
-our $VERSION = '1.1.1';
+our $VERSION = '1.1.2';
 
 
 # -- padre plugin api, refer to Padre::Plugin
 
 # plugin name
-sub plugin_name { 'Autformat' }
+sub plugin_name { 'Autoformat' }
 
 # plugin icon
 sub plugin_icon {
