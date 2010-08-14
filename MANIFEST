@@ -2,11 +2,24 @@ Build.PL
 Changes
 lib/Padre/Plugin/Autoformat.pm
 lib/Padre/Plugin/Autoformat/share/icons/justify.png
+lib/Padre/Plugin/Autoformat/share/locale/messages.pot
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-ar.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-de.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-es-es.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-fr-fr.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-it-it.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-ja.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-nl-nl.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-pl.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-pt-br.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-ru.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-tr.po
+lib/Padre/Plugin/Autoformat/share/locale/Padre__Plugin__Autoformat-zh-tw.po
 LICENSE
-Makefile.PL
 MANIFEST			This list of files
-META.yml
 README
 t/0-load.t
 t/9-pod-coverage.t
 t/9-pod.t
+Makefile.PL
+META.yml

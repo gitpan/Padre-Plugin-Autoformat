@@ -15,10 +15,11 @@ use warnings;
 use File::Basename        qw{ fileparse };
 use File::Spec::Functions qw{ catfile };
 use Module::Util          qw{ find_installed };
+use Padre::Util           ('_T');
 
 use base qw{ Padre::Plugin };
 
-our $VERSION = '1.1.2';
+our $VERSION = '1.2.0';
 
 
 # -- padre plugin api, refer to Padre::Plugin
@@ -40,7 +41,7 @@ sub plugin_icon {
 
 # padre interfaces
 sub padre_interfaces {
-    'Padre::Plugin'     => 0.28,
+    'Padre::Plugin'     => 0.68,
     'Padre::Wx::Editor' => 0.30,
 }
 
@@ -49,7 +50,7 @@ sub menu_plugins_simple {
     my ($self) = @_;
     'Autoformat' => [
         #'About'                    => 'show_about',
-        "Autoformat\tCtrl+Shift+J" => 'autoformat',
+        _T("Autoformat\tCtrl+Shift+J") => 'autoformat',
     ];
 }
 
@@ -108,7 +109,7 @@ more information.
 
 =head2 Standard Padre::Plugin API
 
-C<Padre::Plugin::Autoformat> defines a plugin which follows C<Padre::Plugin>
+L<Padre::Plugin::Autoformat> defines a plugin which follows L<Padre::Plugin>
 API. Refer to this module's documentation for more information.
 
 The following methods are implemented:
