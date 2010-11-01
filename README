@@ -1,55 +1,13 @@
-Padre-Plugin-Autoformat
-=======================
-
-This Padre plugin allows one to reformat her text automatically with Ctrl+Shift+J.
-It is using Text::Autoformat underneath, so check this module's pod for more
-information.
 
 
-INSTALLATION
-============
+This archive contains the distribution Padre-Plugin-Autoformat,
+version 1.21:
 
-To install this module, run the following commands:
+  Reformats your text within Padre
 
-	perl Build.PL
-	./Build
-	./Build test
-	./Build install
+This software is copyright (c) 2010 by Jerome Quelin.
 
-
-SUPPORT AND DOCUMENTATION
-=========================
-
-After installing, you can find documentation for this module with the
-perldoc command.
-
-    perldoc Padre::Plugin::Autoformat
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 
-You can also look for information at:
-
-    RT, CPAN's request tracker
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Padre-Plugin-Autoformat
-
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Padre-Plugin-Autoformat
-
-    CPAN Ratings
-        http://cpanratings.perl.org/d/Padre-Plugin-Autoformat
-
-    Search CPAN
-        http://search.cpan.org/dist/Padre-Plugin-Autoformat/
-
-AUTHOR
-======
-
-Jerome Quelin, <jquelin@cpan.org>
-
-
-COPYRIGHT & LICENSE
-===================
-
-Copyright (c) 2009 Jerome Quelin, all rights reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.

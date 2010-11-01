@@ -1,26 +1,16 @@
-#
-# This file is part of Padre::Plugin::Autoformat.
-# Copyright (c) 2009 Jerome Quelin, all rights reserved.
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the same terms as Perl itself.
-#
-#
-
 package Padre::Plugin::Autoformat;
+BEGIN {
+  $Padre::Plugin::Autoformat::VERSION = '1.21';
+}
+
+# ABSTRACT: Reformats your text within Padre
 
 use strict;
 use warnings;
 
 use File::Basename        qw{ fileparse };
 use File::Spec::Functions qw{ catfile };
-use Module::Util          qw{ find_installed };
-use Padre::Util           ('_T');
-
 use base qw{ Padre::Plugin };
-
-our $VERSION = '1.2.0';
-
 
 # -- padre plugin api, refer to Padre::Plugin
 
@@ -29,14 +19,12 @@ sub plugin_name { 'Autoformat' }
 
 # plugin icon
 sub plugin_icon {
-    # find resource path
-    my $pkgpath = find_installed(__PACKAGE__);
-    my (undef, $dirname, undef) = fileparse($pkgpath);
-    my $iconpath = catfile( $dirname,
-        'Autoformat', 'share', 'icons', 'justify.png');
+    # find icon path using Padre API
+    my $dir = File::Spec->catdir( Padre::Util::share('Autoformat'), 'icons' );
+    my $icon_file = File::Spec->catfile( $dir, 'justify.png' );
 
     # create and return icon
-    return Wx::Bitmap->new( $iconpath, Wx::wxBITMAP_TYPE_PNG );
+    return Wx::Bitmap->new( $icon_file, Wx::wxBITMAP_TYPE_PNG );
 }
 
 # padre interfaces
@@ -48,9 +36,9 @@ sub padre_interfaces {
 # plugin menu.
 sub menu_plugins_simple {
     my ($self) = @_;
-    'Autoformat' => [
+    Wx::gettext('Autoformat') => [
         #'About'                    => 'show_about',
-        _T("Autoformat\tCtrl+Shift+J") => 'autoformat',
+        Wx::gettext("Autoformat\tCtrl+Shift+J") => 'autoformat',
     ];
 }
 
@@ -83,27 +71,28 @@ sub autoformat {
 
 
 1;
-__END__
+
+
+=pod
 
 =head1 NAME
 
-Padre::Plugin::Autoformat - reformat your text within Padre
+Padre::Plugin::Autoformat - Reformats your text within Padre
 
+=head1 VERSION
 
+version 1.21
 
 =head1 SYNOPSIS
 
     $ padre
     Ctrl+Shift+J
 
-
-
 =head1 DESCRIPTION
 
 This plugin allows one to reformat her text automatically with Ctrl+Shift+J.
 It is using C<Text::Autoformat> underneath, so check this module's pod for
 more information.
-
 
 =head1 PUBLIC METHODS
 
@@ -126,7 +115,6 @@ The following methods are implemented:
 
 =back
 
-
 =head2 Formatting methods
 
 =over 4
@@ -137,8 +125,6 @@ Replace the current selection with its autoformatted content.
 
 =back
 
-
-
 =head1 BUGS
 
 Please report any bugs or feature requests to C<padre-plugin-autoformat at
@@ -147,17 +133,10 @@ L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Padre-Plugin-Autoformat>. I wil
 be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 
-
-
 =head1 SEE ALSO
 
 Plugin icon courtesy of Mark James, at
 L<http://www.famfamfam.com/lab/icons/silk/>.
-
-
-Our git repository is located at L<git://repo.or.cz/padre-plugin-autoformat.git>,
-and can be browsed at L<http://repo.or.cz/w/padre-plugin-autoformat.git>.
-
 
 You can also look for information on this module at:
 
@@ -177,19 +156,29 @@ L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Padre-Plugin-Autoformat>
 
 =back
 
+=head1 AUTHORS
 
+=over 4
 
-=head1 AUTHOR
+=item *
 
-Jerome Quelin, C<< <jquelin@cpan.org> >>
+Jerome Quelin <jquelin@gmail.com>
 
+=item *
 
+Ahmad M. Zawawi <ahmad.zawawi@gmail.com>
 
-=head1 COPYRIGHT & LICENSE
+=back
 
-Copyright (c) 2009 Jerome Quelin, all rights reserved.
+=head1 COPYRIGHT AND LICENSE
 
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This software is copyright (c) 2010 by Jerome Quelin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
+
