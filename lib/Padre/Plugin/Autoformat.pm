@@ -1,6 +1,6 @@
 package Padre::Plugin::Autoformat;
 BEGIN {
-  $Padre::Plugin::Autoformat::VERSION = '1.21';
+  $Padre::Plugin::Autoformat::VERSION = '1.22';
 }
 
 # ABSTRACT: Reformats your text within Padre
@@ -81,7 +81,7 @@ Padre::Plugin::Autoformat - Reformats your text within Padre
 
 =head1 VERSION
 
-version 1.21
+version 1.22
 
 =head1 SYNOPSIS
 
